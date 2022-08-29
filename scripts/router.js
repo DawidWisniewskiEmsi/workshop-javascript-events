@@ -11,7 +11,7 @@ class Router {
   #resolveRoute() {
     this.#clearOutlet();
     const { routes } = this;
-    const hash = location.hash.slice(1);
+    const hash = location.hash ? location.hash.slice(1) : '/';
     const handler = routes[hash];
     handler?.();
   }
